@@ -13,13 +13,8 @@ jobs:
     name: CI pipeline
     runs-on: ubuntu-latest
     steps:
-      - name: Setup SDK
-        run: echo "SDK Runner"
-      #steps 2
-      - name : download Winform SDK
-        uses: actions/setup SDK
-          with:
-              dotnet-version:'4.7.2'
+      - name: checkout code
+        uses: actions/checkout@v4
       
       
       

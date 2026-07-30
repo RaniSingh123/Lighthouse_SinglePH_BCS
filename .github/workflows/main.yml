@@ -11,7 +11,10 @@ on:
 jobs:
   build-test-publish:
     name: CI pipeline
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout source code
+        uses: actions/checkout@v4
   
       
       

@@ -23,6 +23,9 @@ jobs:
 
       - name: Build
         run: msbuild LH_RnD_New.sln /p:Configuration=Release
+
+      - name: Run EXE
+        run: .\Lighthouse_SinglePH_BCS\bin\Release\LH_RnD_New.exe
         
       
         

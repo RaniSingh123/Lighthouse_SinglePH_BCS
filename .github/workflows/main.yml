@@ -20,6 +20,11 @@ jobs:
 
       - name: Restore Nuget Packages
         run: nuget restore LH_RnD_New.sln
+
+      - name: Build
+        run: msbuild LH_RnD_New.sln /p:Configuration=Release
+        
+      
         
       
       

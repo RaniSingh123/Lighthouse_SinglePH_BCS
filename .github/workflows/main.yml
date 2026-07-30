@@ -1,1 +1,7 @@
+name: LighoutBCS
 
+on:
+  push:
+    - main
+  pull_request: 
+    - main

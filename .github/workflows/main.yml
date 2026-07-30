@@ -15,6 +15,12 @@ jobs:
     steps:
       - name: Setup SDK
         run: echo "SDK Runner"
+      #steps 2
+      - name : download Winform SDK
+        uses: actions/setup SDK
+          with:
+              dotnet-version:'4.7.2'
+      
       
       
       

@@ -11,17 +11,12 @@ on:
 jobs:
   build-test-publish:
     name: CI pipeline
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-      - name: checkout source code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: downloadSDK
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '4.7.2'
-  
-      
+      - name: Setup MS Build
+        uses: microsoft/setup-msbuild@v4
       
       
 

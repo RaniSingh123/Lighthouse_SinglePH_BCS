@@ -11,11 +11,8 @@ on:
 jobs:
   build-test-publish:
     name: CI pipeline
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout code
-        uses: actions/checkout@v4
-      
+    runs-on: windows-latest
+  
       
       
       

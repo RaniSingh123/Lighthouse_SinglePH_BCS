@@ -3,7 +3,7 @@ name: LighoutBCS
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
       - master

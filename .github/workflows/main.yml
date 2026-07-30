@@ -17,6 +17,10 @@ jobs:
 
       - name: Setup MS Build
         uses: microsoft/setup-msbuild@v2
+
+      - name: Restore Nuget Packages
+        run: nuget restore LH_RnD_New.sln
+        
       
       
 

@@ -7,3 +7,11 @@ on:
   pull_request:
     branches:
       - master
+
+jobs:
+  build-test-publish:
+    name: CI pipeline
+    runs-on: ubuntu-latest
+    steps:
+      - name: Buiding
+        run: echo "BUider"

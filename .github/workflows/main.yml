@@ -13,5 +13,10 @@ jobs:
     name: CI pipeline
     runs-on: ubuntu-latest
     steps:
-      - name: Buiding
-        run: echo "Builder"
+      - name: Setup SDK
+        run: echo "SDK Runner"
+      
+      
+      
+
+  

@@ -23,6 +23,17 @@ jobs:
 
       - name: Build
         run: msbuild LH_RnD_New.sln /p:Configuration=Release
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dotnet-framework-winApp
+          path: '**/bin/Release/'
+
+      
+      
+        
+      
         
       
         

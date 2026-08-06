@@ -39,7 +39,7 @@ jobs:
         - name: Download Build Artifact
           uses: actions/download-Artifact@v4
           with:
-              name: winApp
+              name: dotnet-framework-winApp
               path: E:\LH_RnD_Deploy
               
        

@@ -40,14 +40,14 @@ jobs:
           uses: actions/download-Artifact@v4
           with:
               name: dotnet-framework-winApp
-              path: E:\LH_RnD_Deploy
+              path: E:\LH_RnD_Deploy\Application
 
         - name: Create Deployment Folder
           shell: powershell
           run: |
             $publish = "E:\LH_RnD_Deploy\Publish"
             $backup = "E:\LH_RnD_Deploy\Backup"
-            $deploy = "E:\LH_RnD_Deploy\Deploy"
+            $deploy = "E:\LH_RnD_Deploy\Application"
 
             if(!(Test-Path $publish))
             {
@@ -73,7 +73,7 @@ jobs:
           run: |
             $backup = "E:\LH_RnD_Deploy\backup\$(Get-Date -Format yyyyMMdd_HHmmss)"
             Write-Host "Preparing Backup"
-            Copy-Item "E:\LH_RnD_Deploy\Deploy" -Destination $backup -Recurse
+            Copy-Item "E:\LH_RnD_Deploy\Application" -Destination $backup -Recurse
 
 
             

@@ -40,7 +40,7 @@ jobs:
           uses: actions/download-Artifact@v4
           with:
               name: dotnet-framework-winApp
-              path: E:\LH_RnD_Deploy\Application
+              path: E:\LH_RnD_Deploy\Publish
 
         - name: Create Deployment Folder
           shell: powershell
@@ -71,12 +71,22 @@ jobs:
         - name: Backup Current Version
           shell: powershell
           run: |
-            $backup = "E:\LH_RnD_Deploy\backup\$(Get-Date -Format yyyyMMdd_HHmmss)"
-            Write-Host "Preparing Backup"
-            Copy-Item "E:\LH_RnD_Deploy\Application" -Destination $backup -Recurse
+            $publish = "E:\LH_RnD_Deploy\Publish"
+            $application = "E:\LH_RnD_Deploy\Application"
+            $backup = "E:\LH_RnD_Deploy\Backup\$(Get-Date -Format 'yyyyMMdd_HHmmss')"
+
+            if ((Test-Path $application) -and ((Get-ChildItem $application -Force).Count -gt 0))
+            {
+                Copy-Item $application -Destination $backup -Recurse -Force
+                Write-Host "Backup created."
+            }
+            else
+            {
+                Write-Host "No files to backup."
+            }
 
 
-            
+
               
        
 

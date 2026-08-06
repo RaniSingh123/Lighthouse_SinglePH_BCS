@@ -47,7 +47,7 @@ jobs:
           run: |
             $publish = "E:\LH_RnD_Deploy\Publish"
             $backup = "E:\LH_RnD_Deploy\Backup"
-            $deploy = "E:\LH_RnD_Deploy\Application"
+            $deploy = "E:\LH_RnD_Deploy\Deploy"
 
             if(!(Test-Path $publish))
             {
@@ -72,12 +72,12 @@ jobs:
           shell: powershell
           run: |
             $publish = "E:\LH_RnD_Deploy\Publish"
-            $application = "E:\LH_RnD_Deploy\Application"
+            $deploy = "E:\LH_RnD_Deploy\Deploy"
             $backup = "E:\LH_RnD_Deploy\Backup\$(Get-Date -Format 'yyyyMMdd_HHmmss')"
 
-            if ((Test-Path $application) -and ((Get-ChildItem $application -Force).Count -gt 0))
+            if ((Test-Path $deploy) -and ((Get-ChildItem $deploy -Force).Count -gt 0))
             {
-                Copy-Item $application -Destination $backup -Recurse -Force
+                Copy-Item $deploy -Destination $backup -Recurse -Force
                 Write-Host "Backup created."
             }
             else

@@ -85,6 +85,18 @@ jobs:
                 Write-Host "No files to backup."
             }
 
+        - name: Clean Deploy folder
+          shell: powershell
+          run: |
+            if(Test-Path deploy){
+              Remove-Item deploy\* -Recurse -Force
+              }
+
+        - name: Copy New Files
+          shell: powershell
+          run: |
+            Copy-Item publish\* deploy -Recurse -Force
+              
 
 
               

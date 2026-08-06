@@ -68,6 +68,16 @@ jobs:
           shell: powershell
           run: Get-Process LH_RnD_New -ErrorAction SilentlyContinue | Stop-Process -Force
 
+        - name: Backup Current Version
+          shell: powershell
+          run: |
+            $backup = "E:\LH_RnD_Deploy\backup\$(Get-Date -Format yyyyMMdd_HHmmss)"
+            Copy-Item `"E:\LH_RnD_Deploy\Deploy"`
+             $backup `-Recurse
+
+            Write-Host "Preparing Backup"
+         
+
             
               
        

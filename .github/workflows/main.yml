@@ -51,15 +51,15 @@ jobs:
 
             if(!(Test-Path $publish))
             {
-              New-Item -itemType Directory -Path $publish -Force || Out-Null
+              New-Item -itemType Directory -Path $publish -Force | Out-Null
             }
 
             if(!(Test-Path $backup)){
-              New-Item -itemType Directory -Path $backup -Force || Out-Null
+              New-Item -itemType Directory -Path $backup -Force | Out-Null
             }
             
             if(!(Test-Path $deploy)){
-              New-Item -itemType Directory -Path $deploy  -Force || Out-Null
+              New-Item -itemType Directory -Path $deploy  -Force | Out-Null
             }
 
             

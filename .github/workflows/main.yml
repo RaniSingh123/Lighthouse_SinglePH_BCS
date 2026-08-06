@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dotnet-framework-winApp
-          path: '**/Release/'
+          path: '**/bin/Release/'
 
   deploy:
       name: Deploy LH_RnD_APP
@@ -37,7 +37,7 @@ jobs:
 
       steps:
         - name: Download Build Artifact
-          uses: actions/download-Artifact@v4
+          uses: actions/download-artifact@v4
           with:
               name: dotnet-framework-winApp
               path: E:\LH_RnD_Deploy\Publish

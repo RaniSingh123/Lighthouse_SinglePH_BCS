@@ -99,6 +99,11 @@ jobs:
              $publish = "E:\LH_RnD_Deploy\Publish"
              $deploy = "E:\LH_RnD_Deploy\Deploy"
              Copy-Item $publish\* $deploy -Recurse -Force
+
+        - name: Start EXE
+          shell: powershell
+          run: |
+            Start-Process E:\LH_RnD_Deploy\Deploy\bin\Release\LH_RnD_New.exe
               
 
 

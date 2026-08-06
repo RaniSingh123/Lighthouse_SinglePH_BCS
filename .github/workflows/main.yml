@@ -72,11 +72,9 @@ jobs:
           shell: powershell
           run: |
             $backup = "E:\LH_RnD_Deploy\backup\$(Get-Date -Format yyyyMMdd_HHmmss)"
-            Copy-Item `"E:\LH_RnD_Deploy\Deploy"`
-             $backup `-Recurse
-
             Write-Host "Preparing Backup"
-         
+            Copy-Item "E:\LH_RnD_Deploy\Deploy" -Destination $backup -Recurse
+
 
             
               

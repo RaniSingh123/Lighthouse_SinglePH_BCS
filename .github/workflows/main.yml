@@ -40,14 +40,9 @@ jobs:
           uses: actions/download-Artifact@v4
           with:
               name: winApp
-              path: D:\Deploy\Publish
+              path: E:\LH_RnD_Deploy
               
-        - name: Create Deployment Folder
-          shell: powershell
-          run: |
-            $publishPath = "D:\Deploy\Publish"
-            $backupPath = "D:\Deploy\Backup"
-            $deployPath = "D:\Deploy\LH_RnD_New"
+       
 
           
           

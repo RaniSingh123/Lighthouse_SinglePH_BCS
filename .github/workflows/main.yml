@@ -62,7 +62,7 @@ jobs:
               New-Item -itemType Directory -Path $deploy  -Force | Out-Null
             }
 
-            Write-Host: "Verified Folder Successfully"
+            Write-Host "Verified Folder Successfully"
 
         - name: Stop Application
           shell: powershell

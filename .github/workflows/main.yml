@@ -30,6 +30,30 @@ jobs:
           name: dotnet-framework-winApp
           path: '**/bin/Release/'
 
+  deploy:
+      name: Deploy LH_RnD_APP
+      needs: build-test-publish
+      runs-on: self-hosted
+
+      steps:
+        - name: Download Build Artifact
+          uses: actions/download-Artifact@v4
+          with:
+              name: winApp
+              path: D:\Deploy\Publish
+              
+        - name: Create Deployment Folder
+          shell: powershell
+          run: |
+            $publishPath = "D:\Deploy\Publish"
+            $backupPath = "D:\Deploy\Backup"
+            $deployPath = "D:\Deploy\LH_RnD_New"
+
+          
+          
+      
+  
+
       
       
         
